@@ -1,0 +1,119 @@
+/* =============================================
+   PÁGINA NEGRA — body
+   ============================================= */
+.pagina-negra {
+  background: var(--negro);
+  color: var(--texto-claro);
+}
+
+/* =============================================
+   NAVBAR NEGRA
+   ============================================= */
+.navbar-negra {
+  background: var(--negro);
+}
+
+.navbar-negra .nav-logo,
+.navbar-negra .nav-links a {
+  color: var(--texto-claro);
+}
+
+.navbar-negra .nav-links a::after {
+  background: var(--texto-claro);
+}
+
+.navbar-negra .nav-toggle span {
+  background: var(--texto-claro);
+}
+
+.navbar-negra .nav-links a.activo {
+  opacity: 0.5;
+}
+
+/* Menú móvil en negro */
+@media (max-width: 768px) {
+  .nav-links-negra {
+    background: var(--negro) !important;
+    border-left: 1px solid rgba(255,255,255,0.1) !important;
+  }
+}
+
+/* =============================================
+   ACERCA — MAIN
+   ============================================= */
+.acerca-main {
+  min-height: 80vh;
+  padding: 4rem 6rem 6rem;
+  background: var(--negro);
+}
+
+.acerca-nombre {
+  margin-bottom: 5rem;
+}
+
+.acerca-nombre h1 {
+  font-family: var(--font-cuerpo);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--texto-claro);
+}
+
+/* =============================================
+   ACERCA — CONTENIDO (foto + bio)
+   ============================================= */
+.acerca-contenido {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.acerca-foto {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.acerca-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.acerca-bio {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  padding-top: 1rem;
+}
+
+.acerca-bio p {
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 2;
+  letter-spacing: 0.03em;
+  color: rgba(245,245,245,0.85);
+  text-align: left;
+}
+
+/* =============================================
+   RESPONSIVE — TABLET
+   ============================================= */
+@media (max-width: 768px) {
+  .acerca-main { padding: 3rem 2rem 4rem; }
+  .acerca-nombre { margin-bottom: 3rem; }
+
+  .acerca-contenido {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .acerca-foto { aspect-ratio: 4 / 3; }
+}
+
+@media (max-width: 480px) {
+  .acerca-main { padding: 2rem 1rem 3rem; }
+  .acerca-foto { aspect-ratio: 1 / 1; }
+}

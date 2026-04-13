@@ -1,0 +1,97 @@
+/* =============================================
+   PÁGINA NEGRA
+   ============================================= */
+.pagina-negra {
+  background: var(--negro);
+}
+
+/* =============================================
+   NAVBAR NEGRA — contacto
+   ============================================= */
+.navbar-negra {
+  background: var(--negro) !important;
+}
+
+.navbar-negra .nav-logo,
+.navbar-negra .nav-links a {
+  color: var(--texto-claro) !important;
+}
+
+.navbar-negra .nav-links a::after {
+  background: var(--texto-claro) !important;
+}
+
+.navbar-negra .nav-toggle span {
+  background: var(--texto-claro) !important;
+}
+
+/* Menú móvil en negro */
+@media (max-width: 768px) {
+  .nav-links-negra {
+    background: var(--negro) !important;
+    border-left: 1px solid rgba(255,255,255,0.1) !important;
+  }
+}
+
+/* =============================================
+   CONTACTO — MAIN (fondo negro)
+   ============================================= */
+.contacto-main {
+  background: var(--negro);
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem;
+}
+
+.contacto-contenido {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 700px;
+}
+
+.contacto-disponible {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  color: var(--texto-claro);
+  line-height: 2;
+}
+
+.contacto-escribe {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--texto-claro);
+}
+
+.contacto-escribe a {
+  color: var(--texto-claro);
+  transition: opacity var(--transicion);
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 2px;
+}
+
+.contacto-escribe a:hover { opacity: 0.6; }
+
+/* =============================================
+   FOOTER CONTACTO — sin footer-top negro
+   ============================================= */
+.footer-bottom-contacto {
+  padding: 2rem 6rem 0;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 768px) {
+  .contacto-main { padding: 4rem 2rem; min-height: 45vh; }
+  .footer-bottom-contacto { padding: 1.5rem 2rem 0; }
+}
+
+@media (max-width: 480px) {
+  .contacto-main { padding: 3rem 1rem; }
+  .footer-bottom-contacto { padding: 1.5rem 1rem 0; }
+}

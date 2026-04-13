@@ -1,0 +1,171 @@
+/* =============================================
+   NARRATIVA — SECCIÓN
+   ============================================= */
+.narrativa {
+  padding: 4rem 6rem;
+  background: var(--crema);
+  position: relative;
+}
+
+.narrativa-header {
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.narrativa-num {
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: rgba(10,10,10,0.4);
+}
+
+.narrativa-titulo {
+  font-family: var(--font-cuerpo);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--negro);
+}
+
+/* =============================================
+   LAYOUT DE FOTOS
+   ============================================= */
+.narrativa-fotos {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+/* Foto grande arriba — ancho completo */
+.foto-grande {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+}
+
+.foto-grande img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.foto-grande:hover img { transform: scale(1.02); }
+
+/* Fila de abajo */
+.foto-fila {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4px;
+}
+
+/* Foto mediana izquierda */
+.foto-mediana {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.foto-mediana img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.foto-mediana:hover img { transform: scale(1.02); }
+
+/* Columna derecha — 2 fotos pequeñas */
+.foto-columna {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.foto-pequena {
+  flex: 1;
+  overflow: hidden;
+}
+
+.foto-pequena img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.foto-pequena:hover img { transform: scale(1.02); }
+
+/* =============================================
+   VIDEO VIMEO
+   ============================================= */
+.narrativa-video {
+  margin-top: 4px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--negro);
+}
+
+.narrativa-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* =============================================
+   LABEL DE NARRATIVA
+   ============================================= */
+.narrativa-label {
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: rgba(10,10,10,0.4);
+  margin-top: 1.5rem;
+  text-align: right;
+}
+
+/* =============================================
+   SEPARADOR ENTRE SECCIONES
+   ============================================= */
+.narrativa-separador {
+  height: 1px;
+  background: rgba(10,10,10,0.1);
+  margin: 0 6rem;
+}
+
+/* =============================================
+   LINK ACTIVO EN NAVBAR
+   ============================================= */
+.nav-links a.activo {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* =============================================
+   RESPONSIVE — TABLET
+   ============================================= */
+@media (max-width: 768px) {
+  .narrativa { padding: 3rem 2rem; }
+  .narrativa-separador { margin: 0 2rem; }
+
+  .foto-grande { aspect-ratio: 16 / 9; }
+
+  .foto-fila {
+    grid-template-columns: 1fr;
+  }
+
+  .foto-columna {
+    flex-direction: row;
+  }
+
+  .foto-pequena { aspect-ratio: 1 / 1; }
+}
+
+@media (max-width: 480px) {
+  .narrativa { padding: 2rem 1rem; }
+  .narrativa-separador { margin: 0 1rem; }
+  .foto-grande { aspect-ratio: 4 / 3; }
+}
