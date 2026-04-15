@@ -1,10 +1,22 @@
 /* =============================================
-   NARRATIVA — SECCIÓN
+   TÍTULO DE CATEGORÍA
    ============================================= */
+.narrativa-categoria-titulo {
+  font-family: var(--font-cuerpo);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  color: var(--negro);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(10,10,10,0.15);
+}
+
 .narrativa {
-  padding: 4rem 6rem;
+  padding: 4rem 6rem 4rem 18rem;
   background: var(--crema);
   position: relative;
+  /*overflow: hidden;*/
 }
 
 .narrativa-header {
@@ -29,17 +41,13 @@
   color: var(--negro);
 }
 
-/* =============================================
-   LAYOUT DE FOTOS
-   ============================================= */
 .narrativa-fotos {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin-bottom: 4px;
+  margin-bottom: 0;
 }
 
-/* Foto grande arriba — ancho completo */
 .foto-grande {
   width: 100%;
   aspect-ratio: 16 / 7;
@@ -55,16 +63,16 @@
 
 .foto-grande:hover img { transform: scale(1.02); }
 
-/* Fila de abajo */
 .foto-fila {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 4px;
+  height: auto;
+  min-height: 420px;  
 }
 
-/* Foto mediana izquierda */
 .foto-mediana {
-  aspect-ratio: 4 / 3;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -77,16 +85,17 @@
 
 .foto-mediana:hover img { transform: scale(1.02); }
 
-/* Columna derecha — 2 fotos pequeñas */
 .foto-columna {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  height: 100%;
 }
 
 .foto-pequena {
   flex: 1;
   overflow: hidden;
+  min-height: 0;
 }
 
 .foto-pequena img {
@@ -98,15 +107,53 @@
 
 .foto-pequena:hover img { transform: scale(1.02); }
 
-/* =============================================
-   VIDEO VIMEO
-   ============================================= */
-.narrativa-video {
-  margin-top: 4px;
+.foto-grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.foto-cuadrada {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.foto-cuadrada img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.foto-cuadrada:hover img { transform: scale(1.02); }
+
+.foto-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.foto-tercio {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.foto-tercio img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.foto-tercio:hover img { transform: scale(1.02); }
+
+.narrativa-video {
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background: var(--negro);
+  margin-left: -9rem;
+  margin-right: 0;
+  clip-path: inset(0);
 }
 
 .narrativa-video iframe {
@@ -115,9 +162,13 @@
   border: none;
 }
 
-/* =============================================
-   LABEL DE NARRATIVA
-   ============================================= */
+.narrativa-espacio {
+  height: 120px;
+  background: var(--crema);
+  display: block;
+  width: 100%;
+}
+
 .narrativa-label {
   font-size: 0.55rem;
   font-weight: 400;
@@ -127,45 +178,63 @@
   text-align: right;
 }
 
-/* =============================================
-   SEPARADOR ENTRE SECCIONES
-   ============================================= */
 .narrativa-separador {
   height: 1px;
   background: rgba(10,10,10,0.1);
-  margin: 0 6rem;
+  margin: 0 6rem 0 18rem;
 }
 
-/* =============================================
-   LINK ACTIVO EN NAVBAR
-   ============================================= */
 .nav-links a.activo {
   opacity: 0.5;
   pointer-events: none;
 }
 
 /* =============================================
-   RESPONSIVE — TABLET
+   ZIGZAG — sección inversa
    ============================================= */
+.narrativa-inversa {
+  padding: 4rem 18rem 4rem 6rem;
+}
+
+.narrativa-inversa .narrativa-video {
+  margin-left: 0;
+  margin-right: -9rem;
+}
+
+.narrativa-inversa .narrativa-label {
+  text-align: left;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 1024px) {
+  .narrativa { padding: 3rem 4rem 3rem 8rem; }
+  .narrativa-inversa { padding: 3rem 8rem 3rem 4rem; }
+  .narrativa-separador { margin: 0 4rem 0 8rem; }
+  .narrativa-video { margin-left: -4rem; }
+  .narrativa-inversa .narrativa-video { margin-left: 0; margin-right: -4rem; }
+}
+
 @media (max-width: 768px) {
   .narrativa { padding: 3rem 2rem; }
+  .narrativa-inversa { padding: 3rem 2rem; }
   .narrativa-separador { margin: 0 2rem; }
-
+  .narrativa-video { margin-left: 0; margin-right: 0; }
+  .narrativa-inversa .narrativa-video { margin-left: 0; margin-right: 0; }
   .foto-grande { aspect-ratio: 16 / 9; }
-
-  .foto-fila {
-    grid-template-columns: 1fr;
-  }
-
-  .foto-columna {
-    flex-direction: row;
-  }
-
-  .foto-pequena { aspect-ratio: 1 / 1; }
+  .foto-fila { grid-template-columns: 1fr; height: auto; }
+  .foto-mediana { aspect-ratio: 4 / 3; height: auto; }
+  .foto-columna { flex-direction: row; height: 200px; }
+  .foto-pequena { aspect-ratio: unset; }
+  .foto-grid-3 { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 480px) {
   .narrativa { padding: 2rem 1rem; }
+  .narrativa-inversa { padding: 2rem 1rem; }
   .narrativa-separador { margin: 0 1rem; }
   .foto-grande { aspect-ratio: 4 / 3; }
+  .foto-grid-2x2 { grid-template-columns: 1fr; }
+  .foto-grid-3 { grid-template-columns: 1fr; }
 }
