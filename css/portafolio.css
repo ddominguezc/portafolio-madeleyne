@@ -183,41 +183,74 @@
   .narrativa { padding: 3rem 2rem; }
   .narrativa-separador { margin: 0 2rem; }
   .narrativa-espacio { height: 40px; }
-
   .foto-grande { aspect-ratio: 16/9; }
-
-  .foto-fila {
-    grid-template-columns: 2.5fr 1fr !important;  /* ← lado a lado, NO 1fr */
-    height: auto !important;
-    min-height: unset !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  .foto-mediana {
-    aspect-ratio: 16/9 !important;
-    height: auto !important;
-    min-height: unset !important;
-  }
-
-  .foto-columna { flex-direction: row; height: 200px; min-height: unset; }
-  .foto-pequena { aspect-ratio: unset; }
   .foto-grid-3 { grid-template-columns: 1fr 1fr; }
 
-  [style*="height:650px"], [style*="height: 650px"],
-  [style*="height:550px"], [style*="height: 550px"] {
-    height: auto !important;
-  }
-
+  /* Contenedores flex inline → wrap */
   [style*="display:flex"] { flex-wrap: wrap; }
 
+  /* max-width inline → 100% */
   [style*="max-width:80%"], [style*="max-width: 80%"],
   [style*="max-width:60%"], [style*="max-width: 60%"] {
     max-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
+
+  /* height fija → auto */
+  [style*="height:650px"], [style*="height: 650px"],
+  [style*="height:550px"], [style*="height: 550px"] {
+    height: auto !important;
+  }
+
+  /* CREATIVAS — foto-fila lado a lado con fotos horizontales */
+  #narrativas-creativas .foto-fila {
+    grid-template-columns: 2.5fr 1fr !important;
+    height: auto !important;
+    min-height: unset !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  #narrativas-creativas .foto-mediana {
+    aspect-ratio: 16/9 !important;
+    height: auto !important;
+    min-height: unset !important;
+  }
+
+  /* SOCIALES — layout original restaurado */
+  #narrativas-sociales .foto-fila {
+    grid-template-columns: 1.2fr 1fr !important;
+    height: auto !important;
+    min-height: 250px !important;
+  }
+
+  #narrativas-sociales .foto-mediana {
+    aspect-ratio: unset !important;
+    height: 100% !important;
+    min-height: 250px !important;
+  }
+
+  #narrativas-sociales .foto-columna {
+    flex-direction: column !important;
+    height: 100% !important;
+    min-height: 250px !important;
+  }
+
+  #narrativas-sociales .foto-pequena {
+    flex: 1;
+    min-height: 0;
+  }
+
+  #narrativas-sociales .foto-grande {
+    aspect-ratio: 21/9 !important;
+  }
+
+  #narrativas-sociales .foto-grande img {
+    object-fit: cover;
+    object-position: center center;
+  }
+
 }
 
 /* =============================================
@@ -230,17 +263,6 @@
   .foto-grid-2x2 { grid-template-columns: 1fr; }
   .foto-grid-3 { grid-template-columns: 1fr; }
 
-  .foto-fila {
-    grid-template-columns: 2.5fr 1fr !important;
-    height: auto !important;
-    min-height: unset !important;
-  }
-
-  .foto-mediana {
-    aspect-ratio: 16/9 !important;
-    height: auto !important;
-  }
-
   [style*="height:650px"], [style*="height: 650px"],
   [style*="height:550px"], [style*="height: 550px"] {
     height: auto !important;
@@ -251,5 +273,43 @@
     max-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+  }
+
+  #narrativas-creativas .foto-fila {
+    grid-template-columns: 2.5fr 1fr !important;
+    height: auto !important;
+    min-height: unset !important;
+  }
+
+  #narrativas-creativas .foto-mediana {
+    aspect-ratio: 16/9 !important;
+    height: auto !important;
+  }
+
+  #narrativas-sociales .foto-fila {
+    grid-template-columns: 1.2fr 1fr !important;
+    height: auto !important;
+    min-height: 200px !important;
+  }
+
+  #narrativas-sociales .foto-mediana {
+    aspect-ratio: unset !important;
+    height: 100% !important;
+    min-height: 200px !important;
+  }
+
+  #narrativas-sociales .foto-columna {
+    flex-direction: column !important;
+    height: 100% !important;
+    min-height: 200px !important;
+  }
+
+  #narrativas-sociales .foto-grande {
+    aspect-ratio: 21/9 !important;
+  }
+
+  #narrativas-sociales .foto-grande img {
+    object-fit: cover;
+    object-position: center center;
   }
 }

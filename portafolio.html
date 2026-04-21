@@ -10,6 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/portafolio.css" />
+  <link rel="preload" as="image" href="img/narrativas/personales/foto2.jpg" />
+  <link rel="preload" as="image" href="img/narrativas/personales/foto9.jpg" />
+  <link rel="preload" as="image" href="img/narrativas/personales/foto8.jpg" />
+  <link rel="preload" as="image" href="img/narrativas/personales/foto1.jpg" />
 </head>
 <body>
 
@@ -34,6 +38,10 @@
         <h2 class="narrativa-titulo">NARRATIVAS PERSONALES</h2>
       </div>
       <!-- seccion fotos aki-->
+       <!-- Texto descriptivo subsección 1 -->
+    <p style="font-size:0.6rem;font-weight:300;letter-spacing:0.12em;color:rgba(10,10,10,0.5);font-style:italic;margin-bottom:0.8rem;">
+      Retratos que narran identidad y cotidianidad
+    </p>
       <div class="narrativa-fotos">
         <div style="max-width:80%;margin-right:auto;">
           <div style="display:flex;gap:4px;height:650px;">
@@ -43,20 +51,20 @@
               <!-- foto2 y foto9 arriba -->
               <div style="display:flex;gap:4px;flex:1;">
                 <div style="flex:1;overflow:hidden;">
-                  <img src="img/narrativas/personales/foto2.jpg" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
+                  <img src="img/narrativas/personales/foto2.jpg" loading="eager" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
                 </div>
                 <div style="flex:1;overflow:hidden;">
-                  <img src="img/narrativas/personales/foto9.jpg" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
+                  <img src="img/narrativas/personales/foto9.jpg" loading="eager" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
                 </div>
               </div>
               <!-- foto8 ocupa todo lo restante abajo -->
               <div style="flex:4;overflow:hidden;">
-                <img src="img/narrativas/personales/foto8.jpg" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;" />
+                <img src="img/narrativas/personales/foto8.jpg" loading="eager" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;" />
               </div>
             </div>
             <!-- foto1 columna derecha larga -->
             <div style="flex:1;aspect-ratio:2/3;overflow:hidden;">
-              <img src="img/narrativas/personales/foto1.jpg" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
+              <img src="img/narrativas/personales/foto1.jpg" loading="eager" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
             </div>
 
           </div>
@@ -135,14 +143,14 @@
           <div class="foto-tercio" style="aspect-ratio:4/3"><img src="img/narrativas/creativas/foto1.jpg" loading="lazy" decoding="async" style="object-fit:cover; object-position:center center;" /></div>
           <div class="foto-tercio" style="aspect-ratio:4/3"><img src="img/narrativas/creativas/foto4.jpg" loading="lazy" decoding="async" sstyle="object-fit:cover; object-position:center center;" /></div>
         </div>
-          <div class="foto-fila" style="grid-template-columns:2.5fr 1fr; max-width:80%; margin-left:auto;height:auto !important;">
-            <div class="foto-mediana">
-              <img src="img/narrativas/creativas/foto2.jpg" alt="Creativas 2" loading="lazy" decoding="async" style="object-fit:cover; object-position:center center;" />
-            </div>
-            <div class="foto-mediana">
-              <img src="img/narrativas/creativas/foto3.jpg" alt="Creativas 3" loading="lazy" decoding="async" style="object-fit:cover; object-position:center center;" />
-            </div>
-          </div>
+          <div style="display:flex;gap:4px;max-width:80%;margin-left:auto;margin-top:4px;">
+  <div style="flex:2.5;aspect-ratio:16/9;overflow:hidden;">
+    <img src="img/narrativas/creativas/foto2.jpg" alt="Creativas 2" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center center;" />
+  </div>
+  <div style="flex:1;aspect-ratio:3/4;overflow:hidden;">
+    <img src="img/narrativas/creativas/foto3.jpg" alt="Creativas 3" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center center;" />
+  </div>
+</div>
 
        <!-- seccion diana y silvia -->
        <!--foto8_3 sola -->
@@ -276,7 +284,7 @@
 
   <footer class="footer">
     <div class="footer-top">
-      <p class="footer-disponible">MADELEYNE ESTA DISPONIBLE PARA TRABAJAR EN TU PROYECTO HOY.</p>
+      <p class="footer-disponible">ESTOY DISPONIBLE PARA TRABAJAR EN TU PROYECTO HOY.</p>
       <p class="footer-escribe">ESCRIBE A : <a href="mailto:madeleinealiagaabanto@gmail.com">MADELEINEALIAGAABANTO@GMAIL.COM</a></p>
     </div>
     <div class="footer-bottom">
