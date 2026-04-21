@@ -1,22 +1,8 @@
-/* =============================================
-   TÍTULO DE CATEGORÍA
-   ============================================= */
-.narrativa-categoria-titulo {
-  font-family: var(--font-cuerpo);
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.25em;
-  color: var(--negro);
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(10,10,10,0.15);
-}
-
 .narrativa {
-  padding: 4rem 6rem 4rem 18rem;
+  padding: 4rem 6rem;
   background: var(--crema);
   position: relative;
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 
 .narrativa-header {
@@ -68,7 +54,7 @@
   grid-template-columns: 1.2fr 1fr;
   gap: 4px;
   height: auto;
-  min-height: 420px;  
+  min-height: 420px;
 }
 
 .foto-mediana {
@@ -90,6 +76,7 @@
   flex-direction: column;
   gap: 4px;
   height: 100%;
+  min-height: 420px;
 }
 
 .foto-pequena {
@@ -151,9 +138,9 @@
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background: var(--negro);
-  margin-left: -9rem;
+  margin-left: 0;
   margin-right: 0;
-  clip-path: inset(0);
+  width: 100%;
 }
 
 .narrativa-video iframe {
@@ -163,7 +150,7 @@
 }
 
 .narrativa-espacio {
-  height: 120px;
+  height: 60px;
   background: var(--crema);
   display: block;
   width: 100%;
@@ -181,7 +168,7 @@
 .narrativa-separador {
   height: 1px;
   background: rgba(10,10,10,0.1);
-  margin: 0 6rem 0 18rem;
+  margin: 0 6rem;
 }
 
 .nav-links a.activo {
@@ -190,51 +177,79 @@
 }
 
 /* =============================================
-   ZIGZAG — sección inversa
+   RESPONSIVE — TABLET (768px)
    ============================================= */
-.narrativa-inversa {
-  padding: 4rem 18rem 4rem 6rem;
-}
+@media (max-width: 768px) {
+  .narrativa { padding: 3rem 2rem; }
+  .narrativa-separador { margin: 0 2rem; }
+  .narrativa-espacio { height: 40px; }
 
-.narrativa-inversa .narrativa-video {
-  margin-left: 0;
-  margin-right: -9rem;
-}
+  .foto-grande { aspect-ratio: 16/9; }
 
-.narrativa-inversa .narrativa-label {
-  text-align: left;
+  .foto-fila {
+    grid-template-columns: 2.5fr 1fr !important;  /* ← lado a lado, NO 1fr */
+    height: auto !important;
+    min-height: unset !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .foto-mediana {
+    aspect-ratio: 16/9 !important;
+    height: auto !important;
+    min-height: unset !important;
+  }
+
+  .foto-columna { flex-direction: row; height: 200px; min-height: unset; }
+  .foto-pequena { aspect-ratio: unset; }
+  .foto-grid-3 { grid-template-columns: 1fr 1fr; }
+
+  [style*="height:650px"], [style*="height: 650px"],
+  [style*="height:550px"], [style*="height: 550px"] {
+    height: auto !important;
+  }
+
+  [style*="display:flex"] { flex-wrap: wrap; }
+
+  [style*="max-width:80%"], [style*="max-width: 80%"],
+  [style*="max-width:60%"], [style*="max-width: 60%"] {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 }
 
 /* =============================================
-   RESPONSIVE
+   RESPONSIVE — MÓVIL (480px)
    ============================================= */
-@media (max-width: 1024px) {
-  .narrativa { padding: 3rem 4rem 3rem 8rem; }
-  .narrativa-inversa { padding: 3rem 8rem 3rem 4rem; }
-  .narrativa-separador { margin: 0 4rem 0 8rem; }
-  .narrativa-video { margin-left: -4rem; }
-  .narrativa-inversa .narrativa-video { margin-left: 0; margin-right: -4rem; }
-}
-
-@media (max-width: 768px) {
-  .narrativa { padding: 3rem 2rem; }
-  .narrativa-inversa { padding: 3rem 2rem; }
-  .narrativa-separador { margin: 0 2rem; }
-  .narrativa-video { margin-left: 0; margin-right: 0; }
-  .narrativa-inversa .narrativa-video { margin-left: 0; margin-right: 0; }
-  .foto-grande { aspect-ratio: 16 / 9; }
-  .foto-fila { grid-template-columns: 1fr; height: auto; }
-  .foto-mediana { aspect-ratio: 4 / 3; height: auto; }
-  .foto-columna { flex-direction: row; height: 200px; }
-  .foto-pequena { aspect-ratio: unset; }
-  .foto-grid-3 { grid-template-columns: 1fr 1fr; }
-}
-
 @media (max-width: 480px) {
   .narrativa { padding: 2rem 1rem; }
-  .narrativa-inversa { padding: 2rem 1rem; }
   .narrativa-separador { margin: 0 1rem; }
-  .foto-grande { aspect-ratio: 4 / 3; }
+  .foto-grande { aspect-ratio: 4/3; }
   .foto-grid-2x2 { grid-template-columns: 1fr; }
   .foto-grid-3 { grid-template-columns: 1fr; }
+
+  .foto-fila {
+    grid-template-columns: 2.5fr 1fr !important;
+    height: auto !important;
+    min-height: unset !important;
+  }
+
+  .foto-mediana {
+    aspect-ratio: 16/9 !important;
+    height: auto !important;
+  }
+
+  [style*="height:650px"], [style*="height: 650px"],
+  [style*="height:550px"], [style*="height: 550px"] {
+    height: auto !important;
+  }
+
+  [style*="max-width:80%"], [style*="max-width: 80%"],
+  [style*="max-width:60%"], [style*="max-width: 60%"] {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 }

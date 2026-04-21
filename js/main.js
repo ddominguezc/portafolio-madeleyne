@@ -91,7 +91,7 @@ function avanzarGrupo() {
 }
 
 function iniciarIntervalo() {
-  intervaloGaleria = setInterval(avanzarGrupo, 5000);
+  intervaloGaleria = setInterval(avanzarGrupo, 3000);
 }
 
 // Click en dots

@@ -1,31 +1,11 @@
-/* =============================================
-   PÁGINA NEGRA
-   ============================================= */
-.pagina-negra {
-  background: var(--negro);
-}
+.pagina-negra { background: var(--negro); }
 
-/* =============================================
-   NAVBAR NEGRA — contacto
-   ============================================= */
-.navbar-negra {
-  background: var(--negro) !important;
-}
-
+.navbar-negra { background: var(--negro) !important; }
 .navbar-negra .nav-logo,
-.navbar-negra .nav-links a {
-  color: var(--texto-claro) !important;
-}
+.navbar-negra .nav-links a { color: var(--texto-claro) !important; }
+.navbar-negra .nav-links a::after { background: var(--texto-claro) !important; }
+.navbar-negra .nav-toggle span { background: var(--texto-claro) !important; }
 
-.navbar-negra .nav-links a::after {
-  background: var(--texto-claro) !important;
-}
-
-.navbar-negra .nav-toggle span {
-  background: var(--texto-claro) !important;
-}
-
-/* Menú móvil en negro */
 @media (max-width: 768px) {
   .nav-links-negra {
     background: var(--negro) !important;
@@ -34,27 +14,49 @@
 }
 
 /* =============================================
-   CONTACTO — MAIN (fondo negro)
+   LAYOUT PRINCIPAL
    ============================================= */
 .contacto-main {
   background: var(--negro);
-  min-height: 60vh;
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+/* FOTO DERECHA */
+.contacto-foto {
+  position: relative;
+  overflow: hidden;
+  order: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6rem;
+  padding: 3rem 3rem 3rem 0;
 }
 
+.contacto-foto img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  max-height: 560px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* CONTENIDO IZQUIERDA */
 .contacto-contenido {
-  text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   gap: 2rem;
-  max-width: 700px;
+  padding: 3rem 4rem 3rem 5rem;
+  order: 1;
 }
 
 .contacto-disponible {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 400;
   letter-spacing: 0.18em;
   color: var(--texto-claro);
@@ -62,14 +64,14 @@
 }
 
 .contacto-escribe {
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
   color: var(--texto-claro);
 }
 
 .contacto-escribe a {
   color: var(--texto-claro);
-  transition: opacity var(--transicion);
+  transition: opacity 0.35s ease;
   border-bottom: 1px solid rgba(255,255,255,0.3);
   padding-bottom: 2px;
 }
@@ -77,21 +79,111 @@
 .contacto-escribe a:hover { opacity: 0.6; }
 
 /* =============================================
-   FOOTER CONTACTO — sin footer-top negro
+   FORMULARIO
    ============================================= */
-.footer-bottom-contacto {
-  padding: 2rem 6rem 0;
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
+
+.form-fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-grupo { display: flex; flex-direction: column; }
+
+.contacto-form input,
+.contacto-form textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  color: var(--texto-claro);
+  font-family: var(--font-cuerpo);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  padding: 0.8rem 0;
+  outline: none;
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+.contacto-form input::placeholder,
+.contacto-form textarea::placeholder {
+  color: rgba(245,245,245,0.3);
+  letter-spacing: 0.15em;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus {
+  border-bottom-color: rgba(255,255,255,0.6);
+}
+
+.contacto-form textarea {
+  resize: none;
+  line-height: 1.8;
+}
+
+.form-btn {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.35);
+  color: var(--texto-claro);
+  font-family: var(--font-cuerpo);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.form-btn:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.7);
+}
+
+.form-success {
+  display: none;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: rgba(245,245,245,0.5);
+  margin-top: 0.3rem;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+.footer-bottom-contacto { padding: 2rem 6rem 0; }
 
 /* =============================================
    RESPONSIVE
    ============================================= */
+@media (max-width: 1024px) {
+  .contacto-contenido { padding: 3rem 2rem 3rem 3rem; }
+  .contacto-foto { padding: 3rem 2rem; }
+}
+
 @media (max-width: 768px) {
-  .contacto-main { padding: 4rem 2rem; min-height: 45vh; }
+  .contacto-main { grid-template-columns: 1fr; }
+  .contacto-foto { order: 1; padding: 2rem; max-height: 500px; }
+  .contacto-foto img { max-width: 100%; max-height: 450px; object-fit: contain; margin: 0 auto;
+    }
+  .contacto-contenido { order: 2; padding: 2rem; }
+  .form-fila { grid-template-columns: 1fr; }
   .footer-bottom-contacto { padding: 1.5rem 2rem 0; }
 }
 
 @media (max-width: 480px) {
-  .contacto-main { padding: 3rem 1rem; }
+  .contacto-foto img {
+    max-height: 280px;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    margin: 0 auto;
+  }
+  .contacto-contenido { padding: 2rem 1rem; }
   .footer-bottom-contacto { padding: 1.5rem 1rem 0; }
+  .form-btn { align-self: stretch; text-align: center; }
 }
