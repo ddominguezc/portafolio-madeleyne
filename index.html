@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio Web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preload" as="image" href="img/galeria/grupo_1/persona1.jpg" />
+  <link rel="preload" as="image" href="img/galeria/grupo_1/persona2.jpg" />
+  <link rel="preload" as="image" href="img/galeria/grupo_1/persona3.jpg" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">
+      MADELEYNE ALIAGA
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="portafolio.html">PORTAFOLIO</a></li>
+      <li><a href="acerca.html">ACERCA DE MÍ</a></li>
+      <li><a href="contacto.html">CONTACTO</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- SECCIÓN 1: HERO VIDEO VIMEO -->
+    <section class="hero">
+      <div class="video-wrapper">
+        <iframe
+          id="vimeoPlayer"
+          src="https://player.vimeo.com/video/1180975391?autoplay=1&muted=1&loop=1&controls=0&title=0&byline=0&portrait=0"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          title="Reel Madeleyne Aliaga">
+        </iframe>
+        <button class="btn-mute" id="btnMute" aria-label="Activar sonido">
+          <span id="muteIcon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+              <line x1="23" y1="9" x2="17" y2="15"/>
+              <line x1="17" y1="9" x2="23" y2="15"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: CATEGORÍAS -->
+    <section class="categorias">
+      <a href="portafolio.html#narrativas-personales" class="categoria-item">
+        <span class="categoria-titulo">NARRATIVAS PERSONALES</span>
+        <span class="categoria-linea"></span>
+      </a>
+      <a href="portafolio.html#narrativas-creativas" class="categoria-item">
+        <span class="categoria-titulo">NARRATIVAS CREATIVAS</span>
+        <span class="categoria-linea"></span>
+
+      </a>
+      <a href="portafolio.html#narrativas-sociales" class="categoria-item">
+        <span class="categoria-titulo">NARRATIVAS SOCIALES</span>
+        <span class="categoria-linea"></span>
+      </a>
+      
+    </section>
+
+    <!-- SECCIÓN 3: GALERÍA ROTATIVA -->
+    <section class="galeria">
+      <div class="galeria-track" id="galeriaTrack">
+        <!-- Grupo 1 -->
+        <div class="galeria-grupo activo">
+          <div class="galeria-foto"><img src="img/galeria/grupo_1/persona1.jpg" alt="Fotografía 1" loading="eager" decoding="async" /></div>
+          <div class="galeria-foto"><img src="img/galeria/grupo_1/persona2.jpg" alt="Fotografía 2" loading="eager" decoding="async" /></div>
+          <div class="galeria-foto"><img src="img/galeria/grupo_1/persona3.jpg" alt="Fotografía 3" loading="eager" decoding="async" style="object-position: 70% 90% !important;"/></div>
+        </div>
+        <!-- Grupo 2 -->
+        <div class="galeria-grupo">
+          <div class="galeria-foto"><img src="img/galeria/grupo_2/persona1.jpg" alt="Fotografía 4" loading="lazy" decoding="async" /></div>
+          <div class="galeria-foto"><img src="img/galeria/grupo_2/persona2.jpg" alt="Fotografía 5" loading="lazy" decoding="async" style="object-position: 20%  !important;"/></div>
+          <div class="galeria-foto"><img src="img/galeria/grupo_2/persona3.jpg" alt="Fotografía 6" loading="lazy" decoding="async" style="object-position: 20% 70% !important;"/></div>
+        </div>
+        <!-- Grupo 3 -->
+        <div class="galeria-grupo">
+          <div class="galeria-foto"><img src="img/galeria/grupo_3/persona1.jpg" alt="Fotografía 7" loading="lazy" decoding="async" /></div>
+          <div class="galeria-foto"><img src="img/galeria/grupo_3/persona2.jpg" alt="Fotografía 8" loading="lazy" decoding="async" /></div>
+          <div class="galeria-foto"><img src="img/galeria/grupo_3/persona3.jpg" alt="Fotografía 9" loading="lazy" decoding="async" style="object-position: 70% 90% !important;"/></div>
+        </div>
+      </div>
+      <!-- Indicadores -->
+      <div class="galeria-dots">
+        <span class="dot activo" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: + 21 PROYECTOS -->
+    <section class="proyectos">
+      <button class="proyectos-toggle" id="proyectosToggle" aria-expanded="false">
+        + 21 PROYECTOS
+        <span class="proyectos-flecha">↓</span>
+      </button>
+
+      <!-- LOGOS CLIENTES -->
+      <div class="clientes-grid" id="clientesGrid">
+        <div class="cliente-logo"><img src="img/clientes/pucp.png" alt="PUCP" /></div>
+        <div class="cliente-logo"><img src="img/clientes/utec.png" alt="UTEC" /></div>
+        <div class="cliente-logo"><img src="img/clientes/plan.png" alt="Plan International" /></div>
+        <div class="cliente-logo"><img src="img/clientes/clacai.png" alt="CLACAI" /></div>
+        <div class="cliente-logo"><img src="img/clientes/sea.png" alt="SEA" /></div>
+        <div class="cliente-logo"><img src="img/clientes/promsex.png" alt="PROMSEX" /></div>
+        <div class="cliente-logo"><img src="img/clientes/aecid.png" alt="AECID Cultura" /></div>
+        <div class="cliente-logo"><img src="img/clientes/comutel.png" alt="COMUTEL" /></div>
+        <div class="cliente-logo"><img src="img/clientes/construtores.png" alt="Construtores" /></div>
+        <div class="cliente-logo"><img src="img/clientes/childrens-club.jpg" alt="Children's Club" /></div>
+        <div class="cliente-logo"><img src="img/clientes/bauducco.png" alt="Bauducco" /></div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <p class="footer-disponible">ESTOY DISPONIBLE PARA TRABAJAR EN TU PROYECTO HOY.</p>
+      <p class="footer-escribe">ESCRIBE A : <a href="mailto:madeleinealiagaabanto@gmail.com">MADELEINEALIAGAABANTO@GMAIL.COM</a></p>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-info">
+
+        <span>FOTÓGRAFA | FILMAKER</span>
+        <span>LIMA, PERÚ</span>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:madeleinealiagaabanto@gmail.com" class="footer-link">
+          EMAIL
+          <span class="footer-link-linea"></span>
+        </a>
+        <a href="https://www.instagram.com/madeleynealiaga31" target="_blank" rel="noopener" class="footer-link">
+          INSTAGRAM
+          <span class="footer-link-linea"></span>
+        </a>
+        <a href="https://vimeo.com/madeleynealiaga" target="_blank" rel="noopener" class="footer-link">
+          VIMEO
+          <span class="footer-link-linea"></span>
+        </a>
+      </div>
+      
+      <div class="footer-iniciales">
+        <span class="inicial">M</span>
+        <span class="inicial-punto">.</span>
+        <span class="inicial">A</span>
+      </div>
+      <div class="footer-madeby">
+          <span>MADE BY DIDOCO92</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

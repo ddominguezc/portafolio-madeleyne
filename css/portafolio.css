@@ -1,0 +1,315 @@
+.narrativa {
+  padding: 4rem 6rem;
+  background: var(--crema);
+  position: relative;
+  overflow: hidden;
+}
+
+.narrativa-header {
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.narrativa-num {
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: rgba(10,10,10,0.4);
+}
+
+.narrativa-titulo {
+  font-family: var(--font-cuerpo);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--negro);
+}
+
+.narrativa-fotos {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 0;
+}
+
+.foto-grande {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+}
+
+.foto-grande img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.foto-grande:hover img { transform: scale(1.02); }
+
+.foto-fila {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4px;
+  height: auto;
+  min-height: 420px;
+}
+
+.foto-mediana {
+  height: 100%;
+  overflow: hidden;
+}
+
+.foto-mediana img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.foto-mediana:hover img { transform: scale(1.02); }
+
+.foto-columna {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 100%;
+  min-height: 420px;
+}
+
+.foto-pequena {
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.foto-pequena img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.foto-pequena:hover img { transform: scale(1.02); }
+
+.foto-grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.foto-cuadrada {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.foto-cuadrada img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.foto-cuadrada:hover img { transform: scale(1.02); }
+
+.foto-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.foto-tercio {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.foto-tercio img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.foto-tercio:hover img { transform: scale(1.02); }
+
+.narrativa-video {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--negro);
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+.narrativa-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.narrativa-espacio {
+  height: 60px;
+  background: var(--crema);
+  display: block;
+  width: 100%;
+}
+
+.narrativa-label {
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: rgba(10,10,10,0.4);
+  margin-top: 1.5rem;
+  text-align: right;
+}
+
+.narrativa-separador {
+  height: 1px;
+  background: rgba(10,10,10,0.1);
+  margin: 0 6rem;
+}
+
+.nav-links a.activo {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* =============================================
+   RESPONSIVE — TABLET (768px)
+   ============================================= */
+@media (max-width: 768px) {
+  .narrativa { padding: 3rem 2rem; }
+  .narrativa-separador { margin: 0 2rem; }
+  .narrativa-espacio { height: 40px; }
+  .foto-grande { aspect-ratio: 16/9; }
+  .foto-grid-3 { grid-template-columns: 1fr 1fr; }
+
+  /* Contenedores flex inline → wrap */
+  [style*="display:flex"] { flex-wrap: wrap; }
+
+  /* max-width inline → 100% */
+  [style*="max-width:80%"], [style*="max-width: 80%"],
+  [style*="max-width:60%"], [style*="max-width: 60%"] {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* height fija → auto */
+  [style*="height:650px"], [style*="height: 650px"],
+  [style*="height:550px"], [style*="height: 550px"] {
+    height: auto !important;
+  }
+
+  /* CREATIVAS — foto-fila lado a lado con fotos horizontales */
+  #narrativas-creativas .foto-fila {
+    grid-template-columns: 2.5fr 1fr !important;
+    height: auto !important;
+    min-height: unset !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  #narrativas-creativas .foto-mediana {
+    aspect-ratio: 16/9 !important;
+    height: auto !important;
+    min-height: unset !important;
+  }
+
+  /* SOCIALES — layout original restaurado */
+  #narrativas-sociales .foto-fila {
+    grid-template-columns: 1.2fr 1fr !important;
+    height: auto !important;
+    min-height: 250px !important;
+  }
+
+  #narrativas-sociales .foto-mediana {
+    aspect-ratio: unset !important;
+    height: 100% !important;
+    min-height: 250px !important;
+  }
+
+  #narrativas-sociales .foto-columna {
+    flex-direction: column !important;
+    height: 100% !important;
+    min-height: 250px !important;
+  }
+
+  #narrativas-sociales .foto-pequena {
+    flex: 1;
+    min-height: 0;
+  }
+
+  #narrativas-sociales .foto-grande {
+    aspect-ratio: 21/9 !important;
+  }
+
+  #narrativas-sociales .foto-grande img {
+    object-fit: cover;
+    object-position: center center;
+  }
+
+}
+
+/* =============================================
+   RESPONSIVE — MÓVIL (480px)
+   ============================================= */
+@media (max-width: 480px) {
+  .narrativa { padding: 2rem 1rem; }
+  .narrativa-separador { margin: 0 1rem; }
+  .foto-grande { aspect-ratio: 4/3; }
+  .foto-grid-2x2 { grid-template-columns: 1fr; }
+  .foto-grid-3 { grid-template-columns: 1fr; }
+
+  [style*="height:650px"], [style*="height: 650px"],
+  [style*="height:550px"], [style*="height: 550px"] {
+    height: auto !important;
+  }
+
+  [style*="max-width:80%"], [style*="max-width: 80%"],
+  [style*="max-width:60%"], [style*="max-width: 60%"] {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  #narrativas-creativas .foto-fila {
+    grid-template-columns: 2.5fr 1fr !important;
+    height: auto !important;
+    min-height: unset !important;
+  }
+
+  #narrativas-creativas .foto-mediana {
+    aspect-ratio: 16/9 !important;
+    height: auto !important;
+  }
+
+  #narrativas-sociales .foto-fila {
+    grid-template-columns: 1.2fr 1fr !important;
+    height: auto !important;
+    min-height: 200px !important;
+  }
+
+  #narrativas-sociales .foto-mediana {
+    aspect-ratio: unset !important;
+    height: 100% !important;
+    min-height: 200px !important;
+  }
+
+  #narrativas-sociales .foto-columna {
+    flex-direction: column !important;
+    height: 100% !important;
+    min-height: 200px !important;
+  }
+
+  #narrativas-sociales .foto-grande {
+    aspect-ratio: 21/9 !important;
+  }
+
+  #narrativas-sociales .foto-grande img {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
