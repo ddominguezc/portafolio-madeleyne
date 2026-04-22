@@ -18,7 +18,6 @@ const iconUnmuted = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none"
   <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
 </svg>`;
 
-// Carga el SDK de Vimeo dinámicamente
 const vimeoScript = document.createElement('script');
 vimeoScript.src = 'https://player.vimeo.com/api/player.js';
 vimeoScript.onload = () => {
@@ -54,23 +53,41 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// Crear overlay para cerrar menú al tocar fuera
+const overlay = document.createElement('div');
+overlay.classList.add('nav-overlay');
+document.body.appendChild(overlay);
+
+// Función para cerrar menú
+const cerrarMenu = () => {
+  if (navToggle) navToggle.classList.remove('abierto');
+  if (navLinks) navLinks.classList.remove('abierto');
+  overlay.classList.remove('activo');
+};
+
 if (navToggle) {
   navToggle.addEventListener('click', () => {
     navToggle.classList.toggle('abierto');
     navLinks.classList.toggle('abierto');
+    overlay.classList.toggle('activo');
   });
 }
 
 // Cierra menú al hacer clic en un link
 document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navToggle.classList.remove('abierto');
-    navLinks.classList.remove('abierto');
-  });
+  link.addEventListener('click', cerrarMenu);
+});
+
+// Cierra menú al hacer clic en el overlay
+overlay.addEventListener('click', cerrarMenu);
+
+// Cierra menú con tecla Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') cerrarMenu();
 });
 
 // =============================================
-// GALERÍA ROTATIVA — cada 5 segundos
+// GALERÍA ROTATIVA — cada 3 segundos
 // =============================================
 const grupos = document.querySelectorAll('.galeria-grupo');
 const dots = document.querySelectorAll('.dot');
@@ -94,7 +111,6 @@ function iniciarIntervalo() {
   intervaloGaleria = setInterval(avanzarGrupo, 3000);
 }
 
-// Click en dots
 dots.forEach(dot => {
   dot.addEventListener('click', () => {
     clearInterval(intervaloGaleria);
