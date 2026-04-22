@@ -51,10 +51,13 @@ button { border: none; background: none; font-family: var(--font-cuerpo); }
 .nav-logo {
   font-family: var(--font-cuerpo);
   font-size: 0.7rem;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.15em;
   color: var(--negro);
   transition: opacity var(--transicion);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .nav-logo:hover { opacity: 0.6; }
@@ -67,7 +70,7 @@ button { border: none; background: none; font-family: var(--font-cuerpo); }
 
 .nav-links a {
   font-size: 0.65rem;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.15em;
   color: var(--negro);
   position: relative;
@@ -109,7 +112,7 @@ button { border: none; background: none; font-family: var(--font-cuerpo); }
    ============================================= */
 .hero {
   width: 100%;
-  padding: 0 0 3rem;
+  padding: 0 2rem 3rem;
   background: var(--crema);
 }
 
@@ -226,7 +229,7 @@ button { border: none; background: none; font-family: var(--font-cuerpo); }
 }
 
 .galeria-foto {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 2 / 3;
   overflow: hidden;
 }
 
@@ -267,7 +270,7 @@ button { border: none; background: none; font-family: var(--font-cuerpo); }
 .proyectos-toggle {
   font-family: var(--font-cuerpo);
   font-size: 0.7rem;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.15em;
   color: var(--negro);
   display: inline-flex;
@@ -295,6 +298,7 @@ button { border: none; background: none; font-family: var(--font-cuerpo); }
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem 3rem;
   align-items: center;
+  justify-content: center;
   justify-items: center;
   margin-top: 3rem;
   max-height: 0;
@@ -343,7 +347,7 @@ button { border: none; background: none; font-family: var(--font-cuerpo); }
 
 .footer-disponible {
   font-size: 0.65rem;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.15em;
   color: var(--texto-claro);
   margin-bottom: 1.5rem;
@@ -380,7 +384,7 @@ button { border: none; background: none; font-family: var(--font-cuerpo); }
   font-size: 0.6rem;
   letter-spacing: 0.15em;
   color: var(--negro);
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .footer-links {
@@ -396,6 +400,7 @@ button { border: none; background: none; font-family: var(--font-cuerpo); }
   align-items: flex-start;
   gap: 6px;
   font-size: 0.6rem;
+  font-weight: 700;
   letter-spacing: 0.15em;
   color: var(--negro);
   transition: opacity var(--transicion);
@@ -446,7 +451,6 @@ button { border: none; background: none; font-family: var(--font-cuerpo); }
   align-self: center;
 }
 
-
 /* =============================================
    OVERLAY MENÚ MÓVIL
    ============================================= */
@@ -461,10 +465,12 @@ button { border: none; background: none; font-family: var(--font-cuerpo); }
 
 .nav-overlay.activo { display: block; }
 
+
 /* =============================================
    RESPONSIVE — TABLET (768px)
    ============================================= */
 @media (max-width: 768px) {
+  
   body { cursor: auto; }
   .cursor, .cursor-follower { display: none; }
 
@@ -502,8 +508,11 @@ button { border: none; background: none; font-family: var(--font-cuerpo); }
 
   .galeria { padding: 0 2rem 3rem; max-width: 100%; }
 
-  .galeria-grupo { grid-template-columns: 1fr; gap: 4px; }
-  .galeria-foto { aspect-ratio: 4 / 3; }
+  .galeria-grupo { 
+    grid-template-columns: repeat(3, 1fr);  /* ← mantiene 3 columnas */
+    gap: 4px; 
+  }
+  .galeria-foto { aspect-ratio: 2/3; max-height: 250px; margin: 0 auto;  }
 
   .clientes-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 
@@ -522,12 +531,22 @@ button { border: none; background: none; font-family: var(--font-cuerpo); }
   .nav-links { width: 85%; }
 
   .categorias { padding: 2rem 1rem 1.5rem; }
+  .galeria-grupo { 
+    grid-template-columns: repeat(3, 1fr);  /* ← también 3 columnas */
+    gap: 2px; 
+  }
   .galeria { padding: 0 1rem 2.5rem; }
+  .galeria-foto { 
+    aspect-ratio: 2 / 3;
+    max-height: 180px;
+    margin: 0 auto;
+  }
   .proyectos { padding: 1.5rem 1rem 2.5rem; }
 
   .footer-top { padding: 2.5rem 1rem; }
   .footer-bottom { padding: 1.5rem 1rem 0; }
-  .footer-links { flex-direction: column; gap: 1.2rem; }
+  .footer-links { flex-direction: row; gap:0; justify-content: space-between;}
+  .footer-link { align-items: center !important; }
 
   .clientes-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 

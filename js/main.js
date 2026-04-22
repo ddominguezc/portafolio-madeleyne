@@ -18,6 +18,7 @@ const iconUnmuted = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none"
   <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
 </svg>`;
 
+// Carga el SDK de Vimeo dinámicamente
 const vimeoScript = document.createElement('script');
 vimeoScript.src = 'https://player.vimeo.com/api/player.js';
 vimeoScript.onload = () => {
@@ -65,6 +66,7 @@ const cerrarMenu = () => {
   overlay.classList.remove('activo');
 };
 
+
 if (navToggle) {
   navToggle.addEventListener('click', () => {
     navToggle.classList.toggle('abierto');
@@ -87,7 +89,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // =============================================
-// GALERÍA ROTATIVA — cada 3 segundos
+// GALERÍA ROTATIVA — cada 5 segundos
 // =============================================
 const grupos = document.querySelectorAll('.galeria-grupo');
 const dots = document.querySelectorAll('.dot');
@@ -111,6 +113,7 @@ function iniciarIntervalo() {
   intervaloGaleria = setInterval(avanzarGrupo, 3000);
 }
 
+// Click en dots
 dots.forEach(dot => {
   dot.addEventListener('click', () => {
     clearInterval(intervaloGaleria);
