@@ -176,6 +176,10 @@
   pointer-events: none;
 }
 
+.texto-subseccion {
+  margin-top: 3rem;
+}
+
 /* =============================================
    RESPONSIVE — TABLET (768px)
    ============================================= */
@@ -185,6 +189,18 @@
   .narrativa-espacio { height: 40px; }
   .foto-grande { aspect-ratio: 16/9; }
   .foto-grid-3 { grid-template-columns: 1fr 1fr; }
+  .subseccion-flex { flex-direction: column !important; }
+  .texto-subseccion {
+    margin-top: 0 !important;
+    order: -1 !important;
+    
+  }
+  .subseccion-flex > div {
+    flex: unset !important;
+    min-width: unset !important;
+    width: 100% !important;
+  }
+  .subseccion-flex > div:first-child { max-width: 100% !important; }
 
   /* Contenedores flex inline → wrap */
   [style*="display:flex"] { flex-wrap: wrap; }
