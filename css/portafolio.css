@@ -201,6 +201,14 @@
     width: 100% !important;
   }
   .subseccion-flex > div:first-child { max-width: 100% !important; }
+  .subseccion-flex .narrativa-fotos [style*="margin-top:3rem"],
+  .subseccion-flex .narrativa-fotos [style*="margin-top: 3rem"] {
+    margin-top: 0 !important;
+  }
+  .subseccion-flex > div [style*="margin-top:3rem"],
+  .subseccion-flex > div [style*="margin-top: 3rem"] {
+  margin-top: 0 !important;
+  }
 
   /* Contenedores flex inline → wrap */
   [style*="display:flex"] { flex-wrap: wrap; }
